@@ -79,4 +79,27 @@ public class LoginStepsTest {
         // When
         steps.iShouldSeeThatIAmLoggedIn();
     }
+
+    @Test
+    public void Can_check_that_the_user_has_the_option_to_logout() {
+
+        // Given
+        given(homePage.canLogout()).willReturn(true);
+
+        // When
+        steps.iShouldBeAbleToLogout();
+
+        // Then
+        then(homePage).should().canLogout();
+    }
+
+    @Test(expected = AssertionError.class)
+    public void Can_check_that_the_user_does_not_have_the_option_to_logout() {
+
+        // Given
+        given(homePage.canLogout()).willReturn(false);
+
+        // When
+        steps.iShouldBeAbleToLogout();
+    }
 }

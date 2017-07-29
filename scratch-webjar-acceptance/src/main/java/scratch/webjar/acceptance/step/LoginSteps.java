@@ -6,6 +6,7 @@ import scratch.webjar.acceptance.page.HomePage;
 import scratch.webjar.acceptance.page.LoginPage;
 
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -32,5 +33,10 @@ public class LoginSteps {
     @Then("^I should see that I am logged in$")
     public void iShouldSeeThatIAmLoggedIn() {
         assertThat("The users email should be visible.", homePage.getEmail(), equalTo(userHolder.get().getEmail()));
+    }
+
+    @Then("^I should be able to logout$")
+    public void iShouldBeAbleToLogout() {
+        assertThat("The logout link should be visible.", homePage.canLogout(), is(true));
     }
 }

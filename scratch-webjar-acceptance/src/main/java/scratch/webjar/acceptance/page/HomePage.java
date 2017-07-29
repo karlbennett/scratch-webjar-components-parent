@@ -1,5 +1,6 @@
 package scratch.webjar.acceptance.page;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import scratch.webjar.acceptance.finder.Finders;
@@ -34,6 +35,15 @@ public class HomePage {
 
     public void clickLogin() {
         finders.clickByText("Login");
+    }
+
+    public boolean canLogout() {
+        try {
+            finders.findByClassName("header-logout");
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 
     public String getEmail() {

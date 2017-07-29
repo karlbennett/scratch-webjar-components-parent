@@ -2,6 +2,8 @@ package test.scratch.webjar.acceptance.page;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import scratch.webjar.acceptance.finder.Finders;
 import scratch.webjar.acceptance.page.HomePage;
 
@@ -71,6 +73,32 @@ public class HomePageTest {
 
         // Then
         then(finders).should().clickByText("Login");
+    }
+
+    @Test
+    public void Can_check_that_the_logout_link_is_visible() {
+
+        // Given
+        given(finders.findByClassName("header-logout")).willReturn(mock(WebElement.class));
+
+        // When
+        final boolean actual = page.canLogout();
+
+        // Then
+        assertThat(actual, is(true));
+    }
+
+    @Test
+    public void Can_check_that_the_logout_link_is_not_visible() {
+
+        // Given
+        given(finders.findByClassName("header-logout")).willThrow(mock(NoSuchElementException.class));
+
+        // When
+        final boolean actual = page.canLogout();
+
+        // Then
+        assertThat(actual, is(false));
     }
 
     @Test
