@@ -27,6 +27,10 @@ public class Finders {
         return driver.findElement(by.className(className));
     }
 
+    public String findTextByClassName(String className) {
+        return findByClassName(className).getText();
+    }
+
     public void clickByText(String text) {
         clickByText(driver, text);
     }

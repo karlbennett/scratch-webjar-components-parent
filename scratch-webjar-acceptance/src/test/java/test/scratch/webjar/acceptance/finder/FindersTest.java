@@ -63,6 +63,28 @@ public class FindersTest {
     }
 
     @Test
+    public void Can_find_some_text_by_a_class_name() {
+
+        final String className = someString();
+
+        final By byClassName = mock(By.class);
+        final WebElement element = mock(WebElement.class);
+
+        final String expected = someString();
+
+        // Given
+        given(by.className(className)).willReturn(byClassName);
+        given(driver.findElement(byClassName)).willReturn(element);
+        given(element.getText()).willReturn(expected);
+
+        // When
+        final String actual = finders.findTextByClassName(className);
+
+        // Then
+        assertThat(actual, is(expected));
+    }
+
+    @Test
     public void Can_click_by_text() {
 
         final String text = someString();

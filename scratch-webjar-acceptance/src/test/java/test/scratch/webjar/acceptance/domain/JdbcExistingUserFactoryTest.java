@@ -14,6 +14,7 @@ import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.BDDMockito.then;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.mock;
 import static shiver.me.timbers.data.random.RandomStrings.someString;
@@ -28,7 +29,6 @@ public class JdbcExistingUserFactoryTest {
         final PasswordEncoder passwordEncoder = mock(PasswordEncoder.class);
         final JdbcTemplate jdbcTemplate = mock(JdbcTemplate.class);
 
-        final User user = mock(User.class);
         final String email = someString();
         final String password = someString();
         final String encodedPassword = someString();
@@ -36,24 +36,24 @@ public class JdbcExistingUserFactoryTest {
         final User expected = mock(User.class);
 
         // Given
-        given(randomUserFactory.createRandomUser()).willReturn(user);
-        given(user.getEmail()).willReturn(email);
-        given(user.getPassword()).willReturn(password);
+        given(randomUserFactory.createRandomUser()).willReturn(expected);
+        given(expected.getEmail()).willReturn(email);
+        given(expected.getPassword()).willReturn(password);
         given(passwordEncoder.encode(password)).willReturn(encodedPassword);
-        given(jdbcTemplate.execute(
-            eq("INSERT INTO users (email, password) VALUES (?, ?);"),
-            Matchers.<UserPreparedStatementCallback>argThat(allOf(
-                instanceOf(UserPreparedStatementCallback.class),
-                hasProperty("user.email", email),
-                hasProperty("user.password", encodedPassword)
-            ))
-        )).willReturn(expected);
 
         // When
         final User actual = new JdbcExistingUserFactory(randomUserFactory, passwordEncoder, jdbcTemplate)
             .createExitingUser();
 
         // Then
+        then(jdbcTemplate).should().execute(
+            eq("INSERT INTO users (email, password) VALUES (?, ?);"),
+            Matchers.<UserPreparedStatementCallback>argThat(allOf(
+                instanceOf(UserPreparedStatementCallback.class),
+                hasProperty("user.email", email),
+                hasProperty("user.password", encodedPassword)
+            ))
+        );
         assertThat(actual, is(expected));
     }
 }

@@ -27,9 +27,10 @@ public class JdbcExistingUserFactory implements ExistingUserFactory {
     @Override
     public User createExitingUser() {
         final User user = randomUserFactory.createRandomUser();
-        return jdbcTemplate.execute(
+        jdbcTemplate.execute(
             "INSERT INTO users (email, password) VALUES (?, ?);",
             new UserPreparedStatementCallback(new User(user.getEmail(), passwordEncoder.encode(user.getPassword())))
         );
+        return user;
     }
 }

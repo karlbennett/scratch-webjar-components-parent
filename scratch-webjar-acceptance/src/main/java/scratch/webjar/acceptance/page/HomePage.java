@@ -11,11 +11,21 @@ import scratch.webjar.acceptance.finder.Finders;
 public class HomePage {
 
     private final Finders finders;
+    private final String heading;
     private final String baseUrl;
 
-    public HomePage(Finders finders, @Value("${baseUrl}") String baseUrl) {
+    public HomePage(
+        Finders finders,
+        @Value("${homepage.heading}") String heading,
+        @Value("${baseUrl}") String baseUrl
+    ) {
         this.finders = finders;
+        this.heading = heading;
         this.baseUrl = baseUrl;
+    }
+
+    public boolean isCurrentPage() {
+        return heading.equals(finders.findTextByClassName("main-heading"));
     }
 
     public void visit() {
