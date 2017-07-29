@@ -19,6 +19,6 @@ public class LoginPage {
     public void login(User user) {
         finders.enterTextByLabel("Email", user.getEmail());
         finders.enterTextByLabel("Password", user.getPassword());
-        finders.clickByText(finders.findByClassName("login-form"), "Login");
+        finders.clickByValue("Login");
     }
 }

@@ -21,6 +21,7 @@ public class UserPreparedStatementCallback implements PreparedStatementCallback<
     public User doInPreparedStatement(PreparedStatement statement) throws SQLException, DataAccessException {
         statement.setString(1, user.getEmail());
         statement.setString(2, user.getPassword());
+        statement.execute();
         return user;
     }
 }

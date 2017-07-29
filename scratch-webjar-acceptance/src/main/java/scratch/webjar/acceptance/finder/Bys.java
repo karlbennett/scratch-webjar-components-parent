@@ -20,6 +20,10 @@ public class Bys {
     }
 
     public By text(String text) {
-        return By.xpath(format("//*[contains(text(),'%s')]", text));
+        return By.xpath(format(".//*[contains(text(),'%s')]", text));
+    }
+
+    public By value(String value) {
+        return By.xpath(format(".//input[@value='%s']", value));
     }
 }

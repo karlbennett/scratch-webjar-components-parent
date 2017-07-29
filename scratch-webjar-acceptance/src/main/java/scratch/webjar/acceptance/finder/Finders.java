@@ -40,4 +40,8 @@ public class Finders {
         input.clear();
         input.sendKeys(text);
     }
+
+    public void clickByValue(String value) {
+        driver.findElement(by.value(value)).click();
+    }
 }

@@ -1,6 +1,7 @@
 package test.scratch.webjar.acceptance.domain;
 
 import org.junit.Test;
+import org.mockito.InOrder;
 import scratch.webjar.acceptance.domain.User;
 import scratch.webjar.acceptance.domain.UserPreparedStatementCallback;
 
@@ -10,7 +11,7 @@ import java.sql.SQLException;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.BDDMockito.then;
+import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 import static shiver.me.timbers.data.random.RandomStrings.someString;
 
@@ -33,8 +34,10 @@ public class UserPreparedStatementCallbackTest {
         final User actual = new UserPreparedStatementCallback(user).doInPreparedStatement(statement);
 
         // Then
-        then(statement).should().setString(1, email);
-        then(statement).should().setString(2, password);
+        final InOrder order = inOrder(statement);
+        order.verify(statement).setString(1, email);
+        order.verify(statement).setString(2, password);
+        order.verify(statement).execute();
         assertThat(actual, is(user));
     }
 }

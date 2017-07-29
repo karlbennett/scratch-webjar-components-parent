@@ -2,7 +2,6 @@ package test.scratch.webjar.acceptance.page;
 
 import org.junit.Test;
 import org.mockito.InOrder;
-import org.openqa.selenium.WebElement;
 import scratch.webjar.acceptance.domain.User;
 import scratch.webjar.acceptance.finder.Finders;
 import scratch.webjar.acceptance.page.LoginPage;
@@ -22,12 +21,10 @@ public class LoginPageTest {
 
         final String email = someString();
         final String password = someString();
-        final WebElement loginForm = mock(WebElement.class);
 
         // Given
         given(user.getEmail()).willReturn(email);
         given(user.getPassword()).willReturn(password);
-        given(finders.findByClassName("login-form")).willReturn(loginForm);
 
         // When
         new LoginPage(finders).login(user);
@@ -36,6 +33,6 @@ public class LoginPageTest {
         final InOrder order = inOrder(finders);
         order.verify(finders).enterTextByLabel("Email", email);
         order.verify(finders).enterTextByLabel("Password", password);
-        order.verify(finders).clickByText(loginForm, "Login");
+        order.verify(finders).clickByValue("Login");
     }
 }

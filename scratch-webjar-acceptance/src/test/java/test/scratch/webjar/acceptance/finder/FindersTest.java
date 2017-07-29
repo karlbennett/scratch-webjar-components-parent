@@ -129,4 +129,22 @@ public class FindersTest {
         order.verify(input).sendKeys(text);
     }
 
+    @Test
+    public void Can_click_by_value() {
+
+        final String value = someString();
+
+        final By byValue = mock(By.class);
+        final WebElement element = mock(WebElement.class);
+
+        // Given
+        given(by.value(value)).willReturn(byValue);
+        given(driver.findElement(byValue)).willReturn(element);
+
+        // When
+        finders.clickByValue(value);
+
+        // Then
+        then(element).should().click();
+    }
 }
