@@ -1,4 +1,4 @@
-package scratch.webjar.acceptance.steps;
+package scratch.webjar.acceptance.step;
 
 /**
  * @author Karl Bennett

@@ -1,4 +1,4 @@
-package scratch.webjar.acceptance.steps;
+package scratch.webjar.acceptance.step;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;

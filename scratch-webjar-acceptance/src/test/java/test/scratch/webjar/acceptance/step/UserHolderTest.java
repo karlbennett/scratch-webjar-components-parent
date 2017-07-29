@@ -1,7 +1,7 @@
-package test.scratch.webjar.acceptance.steps;
+package test.scratch.webjar.acceptance.step;
 
 import org.junit.Test;
-import scratch.webjar.acceptance.steps.UserHolder;
+import scratch.webjar.acceptance.step.UserHolder;
 
 public class UserHolderTest {
 

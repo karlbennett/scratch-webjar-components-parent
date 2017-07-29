@@ -1,7 +1,7 @@
-package test.scratch.webjar.acceptance.steps;
+package test.scratch.webjar.acceptance.step;
 
 import org.junit.Test;
-import scratch.webjar.acceptance.steps.GenericHolder;
+import scratch.webjar.acceptance.step.GenericHolder;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;

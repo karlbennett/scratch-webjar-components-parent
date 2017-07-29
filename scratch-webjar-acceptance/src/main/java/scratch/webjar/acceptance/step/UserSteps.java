@@ -1,4 +1,4 @@
-package scratch.webjar.acceptance.steps;
+package scratch.webjar.acceptance.step;
 
 import cucumber.api.java.en.Given;
 import scratch.webjar.acceptance.domain.ExistingUserFactory;

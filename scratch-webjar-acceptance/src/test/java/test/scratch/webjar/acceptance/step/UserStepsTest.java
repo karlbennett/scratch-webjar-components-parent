@@ -1,10 +1,10 @@
-package test.scratch.webjar.acceptance.steps;
+package test.scratch.webjar.acceptance.step;
 
 import org.junit.Test;
 import scratch.webjar.acceptance.domain.ExistingUserFactory;
 import scratch.webjar.acceptance.domain.User;
-import scratch.webjar.acceptance.steps.UserHolder;
-import scratch.webjar.acceptance.steps.UserSteps;
+import scratch.webjar.acceptance.step.UserHolder;
+import scratch.webjar.acceptance.step.UserSteps;
 
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;

@@ -1,4 +1,4 @@
-package test.scratch.webjar.acceptance.steps;
+package test.scratch.webjar.acceptance.step;
 
 import cucumber.api.Scenario;
 import org.junit.Before;
@@ -6,7 +6,8 @@ import org.junit.Test;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import scratch.webjar.acceptance.steps.Hooks;
+import scratch.webjar.acceptance.page.HomePage;
+import scratch.webjar.acceptance.step.Hooks;
 
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
@@ -21,12 +22,24 @@ import static shiver.me.timbers.data.random.RandomBytes.someBytes;
 public class HooksTest {
 
     private ScreenShotDriver driver;
+    private HomePage homePage;
     private Hooks hooks;
 
     @Before
     public void setUp() {
+        homePage = mock(HomePage.class);
         driver = mock(ScreenShotDriver.class);
-        hooks = new Hooks(driver);
+        hooks = new Hooks(homePage, driver);
+    }
+
+    @Test
+    public void Will_visit_the_main_page_before_every_scenario() {
+
+        // When
+        hooks.setup();
+
+        // Then
+        then(homePage).should().visit();
     }
 
     @Test
@@ -84,7 +97,7 @@ public class HooksTest {
         given(driver.manage()).willReturn(options);
 
         // When
-        new Hooks(driver).tearDown(scenario);
+        new Hooks(homePage, driver).tearDown(scenario);
 
         // Then
         then(scenario).should(never()).embed(any(byte[].class), anyString());
