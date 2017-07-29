@@ -72,4 +72,19 @@ public class HomePageTest {
         // Then
         then(finders).should().clickByText("Login");
     }
+
+    @Test
+    public void Can_get_the_users_email_address() {
+
+        final String expected = someString();
+
+        // Given
+        given(finders.findTextByClassName("header-email")).willReturn(expected);
+
+        // When
+        final String actual = page.getEmail();
+
+        // Then
+        assertThat(actual, is(expected));
+    }
 }

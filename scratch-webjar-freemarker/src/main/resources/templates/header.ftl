@@ -1,12 +1,12 @@
-<#macro header username>
+<#macro header email>
 <div class="header-container">
-    <div class="signin">
-        <#if username?has_content>
-            <a href="/profile">${username}</a>
-            <a href="/logout">Logout</a>
+    <div class="login">
+        <#if email?has_content>
+            <a class="header-email" href="/profile">${email}</a>
+            <a class="header-logout" href="/logout">Logout</a>
         <#else>
-            <a href="/registration">Register</a>
-            <a href="/login">Login</a>
+            <a class="header-register" href="/registration">Register</a>
+            <a class="header-login" href="/login">Login</a>
         </#if>
     </div>
     <div class="menu">

@@ -8,7 +8,7 @@
     <title>${title}</title>
 </head>
 <body>
-    <@h.header username="${username!}"/>
+    <@h.header email="${email!}"/>
 
 <div class="content-container">
     <h1 class="main-heading">${heading}</h1>

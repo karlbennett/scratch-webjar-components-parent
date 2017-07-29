@@ -35,4 +35,8 @@ public class HomePage {
     public void clickLogin() {
         finders.clickByText("Login");
     }
+
+    public String getEmail() {
+        return finders.findTextByClassName("header-email");
+    }
 }
