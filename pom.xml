@@ -123,8 +123,8 @@
         <module>scratch-webjar-templates</module>
         <module>scratch-webjar-components</module>
         <module>scratch-webjar-backend</module>
-        <module>scratch-webjar-freemarker</module>
-        <module>scratch-webjar-html5</module>
+        <module>scratch-webjar-application-freemarker</module>
+        <module>scratch-webjar-application-html5</module>
         <module>scratch-webjar-acceptance</module>
     </modules>
 </project>

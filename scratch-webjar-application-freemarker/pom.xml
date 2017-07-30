@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>scratch-webjar-html5</artifactId>
+    <artifactId>scratch-webjar-application-freemarker</artifactId>
 
     <packaging>jar</packaging>
 
@@ -30,9 +30,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <configuration>
-                    <systemPropertyVariables>
-                        <web.driver>chrome</web.driver>
-                    </systemPropertyVariables>
                     <dependenciesToScan>
                         <dependency>scratch:scratch-webjar-acceptance</dependency>
                     </dependenciesToScan>
@@ -60,12 +57,12 @@
         </dependency>
         <dependency>
             <groupId>scratch</groupId>
-            <artifactId>scratch-webjar-components-page-header</artifactId>
+            <artifactId>scratch-webjar-templates-header</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>scratch</groupId>
-            <artifactId>scratch-webjar-components-form-login</artifactId>
+            <artifactId>scratch-webjar-templates-form-login</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
