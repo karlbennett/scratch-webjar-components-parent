@@ -13,4 +13,9 @@
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
+
+    <modules>
+        <module>scratch-webjar-components-page-header</module>
+        <module>scratch-webjar-components-form-login</module>
+    </modules>
 </project>
