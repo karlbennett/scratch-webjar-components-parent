@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>scratch-webjar-input-password</artifactId>
+    <artifactId>scratch-webjar-templates-input-text</artifactId>
 
     <packaging>jar</packaging>
 

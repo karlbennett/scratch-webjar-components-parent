@@ -15,10 +15,10 @@
     <name>${project.artifactId}</name>
 
     <modules>
-        <module>scratch-webjar-header</module>
-        <module>scratch-webjar-form</module>
-        <module>scratch-webjar-input-text</module>
-        <module>scratch-webjar-input-password</module>
-        <module>scratch-webjar-form-login</module>
+        <module>scratch-webjar-templates-header</module>
+        <module>scratch-webjar-templates-form</module>
+        <module>scratch-webjar-templates-input-text</module>
+        <module>scratch-webjar-templates-input-password</module>
+        <module>scratch-webjar-templates-form-login</module>
     </modules>
 </project>
