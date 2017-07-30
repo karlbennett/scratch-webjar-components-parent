@@ -120,6 +120,7 @@
     </dependencies>
 
     <modules>
+        <module>scratch-webjar-common-sass</module>
         <module>scratch-webjar-templates</module>
         <module>scratch-webjar-components</module>
         <module>scratch-webjar-backend</module>

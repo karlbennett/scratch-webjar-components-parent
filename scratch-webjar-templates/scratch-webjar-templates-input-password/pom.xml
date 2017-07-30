@@ -13,4 +13,13 @@
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>nl.geodienstencentrum.maven</groupId>
+                <artifactId>sass-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
