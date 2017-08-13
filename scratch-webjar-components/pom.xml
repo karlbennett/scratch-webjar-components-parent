@@ -23,8 +23,11 @@
     </dependencies>
 
     <modules>
-        <module>scratch-webjar-components-page-login</module>
-        <module>scratch-webjar-components-page-header</module>
+        <module>scratch-webjar-components-form</module>
         <module>scratch-webjar-components-form-login</module>
+        <module>scratch-webjar-components-input-password</module>
+        <module>scratch-webjar-components-input-text</module>
+        <module>scratch-webjar-components-page-header</module>
+        <module>scratch-webjar-components-page-login</module>
     </modules>
 </project>

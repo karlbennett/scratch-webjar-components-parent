@@ -1,0 +1,19 @@
+<link rel="import" href="/webjars/polymer/1.8.0/polymer.html">
+<link rel="import" href="/components/page-form.html">
+<link rel="import" href="/components/input-text.html">
+<link rel="import" href="/components/input-password.html">
+
+<dom-module id="form-login">
+    <template>
+        <page-form method="POST" action="/login" button="Login">
+            <input-text label="Email" name="email"></input-text>
+            <input-password label="Password" name="password"></input-password>
+        </page-form>
+    </template>
+
+    <script>
+      Polymer({
+        is: 'form-login'
+      });
+    </script>
+</dom-module>

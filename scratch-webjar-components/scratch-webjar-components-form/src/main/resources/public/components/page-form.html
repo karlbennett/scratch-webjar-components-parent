@@ -1,0 +1,21 @@
+<link rel="import" href="/webjars/polymer/1.8.0/polymer.html">
+
+<dom-module id="page-form">
+    <template>
+        <form class="form" method="[[method]]" action="[[action]]">
+            <slot></slot>
+            <input class="form-button" type="submit" value="[[button]]">
+        </form>
+    </template>
+
+    <script>
+      Polymer({
+        is: 'page-form',
+        properties: {
+          method: String,
+          action: String,
+          button: String
+        }
+      });
+    </script>
+</dom-module>

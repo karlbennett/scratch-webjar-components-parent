@@ -17,7 +17,17 @@
     <dependencies>
         <dependency>
             <groupId>scratch</groupId>
-            <artifactId>scratch-webjar-templates-form-login</artifactId>
+            <artifactId>scratch-webjar-components-form</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>scratch</groupId>
+            <artifactId>scratch-webjar-components-input-text</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>scratch</groupId>
+            <artifactId>scratch-webjar-components-input-password</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

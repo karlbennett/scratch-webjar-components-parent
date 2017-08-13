@@ -1,0 +1,20 @@
+<link rel="import" href="/webjars/polymer/1.8.0/polymer.html">
+
+<dom-module id="input-text">
+    <link rel="import" type="css" href="/css/input-text.css">
+    <template>
+        <div class="input">
+            <label for="[[name]]" class="input-label">[[label]]</label><input id="[[name]]" name="[[name]]" class="input-text">
+        </div>
+    </template>
+
+    <script>
+      Polymer({
+        is: 'input-text',
+        properties: {
+          label: String,
+          name: String
+        }
+      });
+    </script>
+</dom-module>
