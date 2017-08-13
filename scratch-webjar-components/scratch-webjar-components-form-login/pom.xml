@@ -16,11 +16,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>polymer</artifactId>
-            <version>1.8.0</version>
-        </dependency>
-        <dependency>
             <groupId>scratch</groupId>
             <artifactId>scratch-webjar-templates-form-login</artifactId>
             <version>1.0-SNAPSHOT</version>

@@ -22,4 +22,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>scratch</groupId>
+            <artifactId>scratch-webjar-sass-page-header</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

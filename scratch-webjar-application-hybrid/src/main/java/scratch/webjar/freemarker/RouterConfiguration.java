@@ -30,7 +30,7 @@ public class RouterConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/components/page-header").setViewName("/components/page-header");
+        registry.addViewController("/components/page-login").setViewName("/components/page-login");
         registry.addViewController("/").setViewName("home");
         registry.addViewController("/login").setViewName("login");
     }
