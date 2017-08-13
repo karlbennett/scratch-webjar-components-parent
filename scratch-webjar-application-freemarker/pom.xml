@@ -42,7 +42,7 @@
                     <excludes>
                         <exclude>**/*Configuration.*</exclude>
                         <!-- Unfortunately Jacoco tries to instrument some dependencies and this dependency contains -->
-                        <!-- a class with a method that is to large to instrument. -->
+                        <!-- a class with a method that is to large too instrument. -->
                         <exclude>**com.steadystate*</exclude>
                     </excludes>
                 </configuration>

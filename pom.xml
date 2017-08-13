@@ -126,6 +126,7 @@
         <module>scratch-webjar-backend</module>
         <module>scratch-webjar-application-freemarker</module>
         <module>scratch-webjar-application-html5</module>
+        <module>scratch-webjar-application-hybrid</module>
         <module>scratch-webjar-acceptance</module>
     </modules>
 </project>

@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>scratch-webjar-application-html5</artifactId>
+    <artifactId>scratch-webjar-application-hybrid</artifactId>
 
     <packaging>jar</packaging>
 
@@ -45,7 +45,7 @@
                     <excludes>
                         <exclude>**/*Configuration.*</exclude>
                         <!-- Unfortunately Jacoco tries to instrument some dependencies and this dependency contains -->
-                        <!-- a class with a method that is to large too instrument. -->
+                        <!-- a class with a method that is too large to instrument. -->
                         <exclude>**com.steadystate*</exclude>
                     </excludes>
                 </configuration>
@@ -70,7 +70,7 @@
         </dependency>
         <dependency>
             <groupId>scratch</groupId>
-            <artifactId>scratch-webjar-components-form-login</artifactId>
+            <artifactId>scratch-webjar-templates-form-login</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
