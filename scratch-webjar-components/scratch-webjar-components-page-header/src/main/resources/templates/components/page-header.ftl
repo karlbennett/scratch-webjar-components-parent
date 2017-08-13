@@ -1,10 +1,10 @@
-<#import "../header.ftl" as h>
+<#import "../pageHeader.ftl" as h>
 <link rel="import" href="/webjars/polymer/1.8.0/polymer.html">
 
 <dom-module id="page-header">
-    <link rel="import" type="css" href="/css/header.css">
+    <link rel="import" type="css" href="/css/page-header.css">
     <template>
-    <@h.header email="${email!}"/>
+    <@h.pageHeader email="${email!}"/>
     </template>
 
     <script>

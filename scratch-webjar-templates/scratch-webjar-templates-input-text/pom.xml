@@ -14,12 +14,11 @@
 
     <name>${project.artifactId}</name>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>nl.geodienstencentrum.maven</groupId>
-                <artifactId>sass-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <dependencies>
+        <dependency>
+            <groupId>scratch</groupId>
+            <artifactId>scratch-webjar-sass-input-text</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

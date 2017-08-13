@@ -8,9 +8,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>scratch-webjar-common-sass</artifactId>
+    <artifactId>scratch-webjar-sass</artifactId>
 
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
 
@@ -37,4 +37,11 @@
             </plugin>
         </plugins>
     </build>
+
+    <modules>
+        <module>scratch-webjar-sass-common</module>
+        <module>scratch-webjar-sass-input-password</module>
+        <module>scratch-webjar-sass-input-text</module>
+        <module>scratch-webjar-sass-page-header</module>
+    </modules>
 </project>

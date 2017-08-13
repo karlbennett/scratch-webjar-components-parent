@@ -14,34 +14,9 @@
 
     <name>${project.artifactId}</name>
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <!-- Compile the SASS into CSS. -->
-                    <groupId>nl.geodienstencentrum.maven</groupId>
-                    <artifactId>sass-maven-plugin</artifactId>
-                    <version>2.23</version>
-                    <configuration>
-                        <sassOptions>
-                            <style>:compressed</style>
-                        </sassOptions>
-                        <destination>${project.build.outputDirectory}/META-INF/resources/css</destination>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>update-stylesheets</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
-
     <modules>
-        <module>scratch-webjar-templates-header</module>
+        <module>scratch-webjar-templates-page-header</module>
+        <module>scratch-webjar-templates-page-login</module>
         <module>scratch-webjar-templates-form</module>
         <module>scratch-webjar-templates-input-text</module>
         <module>scratch-webjar-templates-input-password</module>

@@ -1,4 +1,3 @@
-<#import "header.ftl" as h>
 <#macro layout title heading>
 <!DOCTYPE html>
 <html lang="en">
